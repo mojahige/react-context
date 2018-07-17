@@ -10,6 +10,7 @@ interface State {
 interface ProviderAction {
   increment: () => void
   decrement: () => void
+  asyncIncrement: () => void
 }
 
 interface Context {
@@ -21,7 +22,8 @@ const CounterContext = createContext({
   count: 0,
   action: {
     increment: () => {},
-    decrement: () => {}
+    decrement: () => {},
+    asyncIncrement: () => {}
   }
 })
 
@@ -43,7 +45,8 @@ class Counter extends Component<{}, State> {
       count: this.state.count,
       action: {
         increment: this.increment.bind(this),
-        decrement: this.decrement.bind(this)
+        decrement: this.decrement.bind(this),
+        asyncIncrement: this.asyncIncrement.bind(this)
       }
     }
   }
@@ -58,6 +61,12 @@ class Counter extends Component<{}, State> {
     this.setState({
       count: this.state.count - 1
     })
+  }
+
+  public asyncIncrement() {
+    setTimeout(() => {
+      this.increment()
+    }, 1000)
   }
 
   render() {

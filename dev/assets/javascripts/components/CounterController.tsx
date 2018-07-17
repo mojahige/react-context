@@ -31,6 +31,7 @@ const CounterController: SFC<{}> = () => (
         <ButtonContainer>
           <ActionButton onClick={action.increment}>+</ActionButton>
           <ActionButton onClick={action.decrement}>-</ActionButton>
+          <ActionButton onClick={action.asyncIncrement}>async +</ActionButton>
         </ButtonContainer>
       </Root>
     )}
