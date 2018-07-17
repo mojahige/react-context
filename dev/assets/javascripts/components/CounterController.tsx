@@ -1,4 +1,5 @@
 import * as React from 'react'
+import { SFC } from 'react'
 import { CounterConsumer } from '../container/Counter'
 import styled from 'styled-components'
 
@@ -23,7 +24,7 @@ const ActionButton = styled.button.attrs({
   line-height: 0;
 `
 
-const CounterController = () => (
+const CounterController: SFC<{}> = () => (
   <CounterConsumer>
     {({ action }) => (
       <Root>
