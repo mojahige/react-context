@@ -10,7 +10,7 @@
     "lint-check": "tslint-config-prettier-check ./tslint.json"
   },
   "keywords": [],
-  "author": "",
+  "author": "Yu Nozato",
   "license": "ISC",
   "devDependencies": {
     "babel-preset-env": "^1.7.0",
